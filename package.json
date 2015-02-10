@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/pdehaan/summarizer",
   "dependencies": {
-    "node-summary": "1.0.0",
+    "node-summary": "https://github.com/tmanderson/node-summary/archive/v1.0.0.tar.gz",
     "promise": "5.0.0",
-    "summarize": "https://github.com/tmanderson/summarizer/archive/v1.0.0.tar.gz",
+    "summarize": "1.4.0",
     "superagent": "0.18.2",
     "unfluff": "0.7.0"
   },
