@@ -1,36 +1,35 @@
 {
-  "name": "summarizer",
-  "version": "1.0.0",
-  "description": "Scrapes a remote page and creates a summary with statistics.",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index",
-    "test": "eslint .",
-    "example": "node example"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pdehaan/summarizer.git"
-  },
-  "keywords": [
-    "summarize",
-    "summarizer",
-    "summary"
-  ],
-  "author": "Peter deHaan <peter@deseloper.com> (http://nodeexamples.com/)",
-  "license": "WTFPL",
-  "bugs": {
-    "url": "https://github.com/pdehaan/summarizer/issues"
-  },
-  "homepage": "https://github.com/pdehaan/summarizer",
-  "dependencies": {
-    "node-summary": "https://github.com/tmanderson/node-summary/archive/v1.0.0.tar.gz",
-    "promise": "5.0.0",
-    "summarize": "1.4.0",
-    "superagent": "0.18.2",
-    "unfluff": "0.7.0"
-  },
-  "devDependencies": {
-    "eslint": "0.7.4"
-  }
+    "name": "summarizer",
+    "version": "2.0.0",
+    "description": "Scrapes a remote page and creates a summary with statistics.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index",
+        "test": "eslint .",
+        "example": "node example"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ankemp/summarizer.git"
+    },
+    "keywords": [
+        "summarize",
+        "summarizer",
+        "summary"
+    ],
+    "author": "Andrew Kemp <andrew@ankemp.com>",
+    "license": "WTFPL",
+    "bugs": {
+        "url": "https://github.com/ankemp/summarizer/issues"
+    },
+    "homepage": "https://github.com/ankemp/summarizer",
+    "dependencies": {
+        "node-summary": "^1.1.0",
+        "summarize": "^1.5.0",
+        "superagent": "^3.5.2",
+        "unfluff": "^1.1.0"
+    },
+    "devDependencies": {
+        "eslint": "0.7.4"
+    }
 }
