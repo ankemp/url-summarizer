@@ -21,11 +21,9 @@ $ yarn add https://github.com/ankemp/summarizer
 ### [Example usage]
 
 ```js
-'use strict';
+const summarizer = require('summarizer')
 
-var summarizer = require('summarizer');
-
-var url = 'http://nodejs.org/api/documentation.html';
+const url = 'http://nodejs.org/api/documentation.html'
 
 summarizer(url)
     .then((data) => {
