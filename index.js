@@ -1,6 +1,6 @@
 const summarize = require('summarize')
 const summary = require('node-summary')
-const superagent = require('superagent')
+const request = require('request')
 const unfluff = require('unfluff')
 
 const summarizeArticle = (title, story) => {
@@ -13,20 +13,18 @@ const summarizeArticle = (title, story) => {
     })
 }
 
-const superagentGet = (url) => {
+const requestPromise = (requestOptions) => {
     return new Promise((Resolve, Reject) => {
-        superagent
-            .get(url)
-            .end((err, res) => {
-                if (err) return Reject(err)
-                return Resolve(res)
-            })
+        request(requestOptions, (err, response, body) => {
+            if (err) return Reject(err)
+            return Resolve(body)
+        })
     })
 }
 
-module.exports = (url, options) => {
+module.exports = (requestOptions, options) => {
     return new Promise((Resolve, Reject) => {
-        superagentGet(url)
+        requestPromise(requestOptions)
             .then(data => {
                 const text = data.text
                 let pageContent = unfluff(text)

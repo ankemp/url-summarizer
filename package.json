@@ -25,8 +25,8 @@
     "homepage": "https://github.com/ankemp/summarizer",
     "dependencies": {
         "node-summary": "^1.1.0",
+        "request": "^2.81.0",
         "summarize": "^1.5.0",
-        "superagent": "^3.5.2",
         "unfluff": "^1.1.0"
     },
     "devDependencies": {
