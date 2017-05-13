@@ -13,7 +13,7 @@ const summarizeArticle = (title, story) => {
     })
 }
 
-const superagentGetP = (uri) => {
+const superAgentGet = (uri) => {
     return new Promise((Resolve, Reject) => {
         superagent.get(uri)
             .end((err, res) => {
@@ -23,9 +23,9 @@ const superagentGetP = (uri) => {
     })
 }
 
-module.exports.getPage = (uri) => {
+module.exports = (url) => {
     return new Promise((Resolve, Reject) => {
-        superagentGetP(uri)
+        superAgentGet(url)
             .then(data => {
                 const text = data.text
                 let pageContent = unfluff(text)
@@ -34,9 +34,11 @@ module.exports.getPage = (uri) => {
                 summarizeArticle(pageContent.title, pageContent.text)
                     .then((res) => {
                         pageContent.summary = res
-                        Resolve(pageContent)
-                    }, Reject)
-            }, Reject)
+                        return Resolve(pageContent)
+                    })
+                    .catch(err => Reject)
+            })
+            .catch(err => Reject)
     })
 }
 
