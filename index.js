@@ -4,7 +4,6 @@ const request = require('request')
 const unfluff = require('unfluff')
 
 const summarizeArticle = (title, story) => {
-    console.log(title, story)
     return new Promise((Resolve, Reject) => {
         summary.summarize(title, story, (err, summary) => {
             if (err) return Reject(err)
