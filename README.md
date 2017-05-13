@@ -1,6 +1,4 @@
-# summarizer
-
-[![Build Status: Travis](https://travis-ci.org/pdehaan/summarizer.svg?branch=master)](https://travis-ci.org/pdehaan/summarizer)
+# summarizer - Based on [pdehaan's summarizer](https://github.com/pdehaan/summarizer)
 
 Scrapes a remote page and creates a summary with statistics.
 
