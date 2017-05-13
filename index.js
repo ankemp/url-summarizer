@@ -24,16 +24,18 @@ const superagentGet = (url) => {
     })
 }
 
-module.exports = (url) => {
+module.exports = (url, options) => {
     return new Promise((Resolve, Reject) => {
         superagentGet(url)
             .then(data => {
                 const text = data.text
                 let pageContent = unfluff(text)
-                pageContent.raw = text
+                if (options.includeRaw) {
+                    pageContent.raw = text
+                }
                 pageContent.stats = summarize(text)
                 summarizeArticle(pageContent.title, pageContent.text)
-                    .then((summary) => {
+                    .then(summary => {
                         pageContent.summary = summary
                         return Resolve(pageContent)
                     })
