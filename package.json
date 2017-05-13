@@ -1,6 +1,6 @@
 {
     "name": "summarizer",
-    "version": "4.2.3",
+    "version": "4.2.4",
     "description": "Scrapes a remote page and creates a summary with statistics.",
     "main": "index.js",
     "scripts": {

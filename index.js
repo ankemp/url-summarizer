@@ -36,9 +36,9 @@ module.exports = (requestOptions, options) => {
                         pageContent.summary = summary
                         return Resolve(pageContent)
                     })
-                    .catch(err => Reject)
+                // .catch(err => Reject)
             })
-            .catch(err => Reject)
+        // .catch(err => Reject)
     })
 }
 
