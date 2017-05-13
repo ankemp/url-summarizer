@@ -4,6 +4,7 @@ const request = require('request')
 const unfluff = require('unfluff')
 
 const summarizeArticle = (title, story) => {
+    console.log(title, story)
     return new Promise((Resolve, Reject) => {
         summary.summarize(title, story, (err, summary) => {
             if (err) return Reject(err)
@@ -25,13 +26,12 @@ const requestPromise = (requestOptions) => {
 module.exports = (requestOptions, options) => {
     return new Promise((Resolve, Reject) => {
         requestPromise(requestOptions)
-            .then(data => {
-                const text = data.text
-                let pageContent = unfluff(text)
-                if (options.includeRaw) {
-                    pageContent.raw = text
+            .then(body => {
+                let pageContent = unfluff(body)
+                if (options && options.includeRaw) {
+                    pageContent.raw = body
                 }
-                pageContent.stats = summarize(text)
+                pageContent.stats = summarize(body)
                 summarizeArticle(pageContent.title, pageContent.text)
                     .then(summary => {
                         pageContent.summary = summary
