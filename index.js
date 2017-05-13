@@ -13,9 +13,10 @@ const summarizeArticle = (title, story) => {
     })
 }
 
-const superAgentGet = (uri) => {
+const superagentGet = (url) => {
     return new Promise((Resolve, Reject) => {
-        superagent.get(uri)
+        superagent
+            .get(url)
             .end((err, res) => {
                 if (err) return Reject(err)
                 return Resolve(res)
@@ -25,15 +26,15 @@ const superAgentGet = (uri) => {
 
 module.exports = (url) => {
     return new Promise((Resolve, Reject) => {
-        superAgentGet(url)
+        superagentGet(url)
             .then(data => {
                 const text = data.text
                 let pageContent = unfluff(text)
                 pageContent.raw = text
                 pageContent.stats = summarize(text)
                 summarizeArticle(pageContent.title, pageContent.text)
-                    .then((res) => {
-                        pageContent.summary = res
+                    .then((summary) => {
+                        pageContent.summary = summary
                         return Resolve(pageContent)
                     })
                     .catch(err => Reject)
