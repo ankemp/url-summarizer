@@ -1,4 +1,4 @@
-# summarizer - Based on [pdehaan's summarizer](https://github.com/pdehaan/summarizer)
+# URL Summarizer
 
 Scrapes a remote page and creates a summary with statistics.
 
@@ -11,17 +11,17 @@ This package uses a combination of the following modules:
 ## Installation
 
 ```sh
-$ npm i https://github.com/ankemp/summarizer
+$ npm i url-summarizer
 ```
 
 ```sh
-$ yarn add https://github.com/ankemp/summarizer
+$ yarn add url-summarizer
 ```
 
 ### [Example usage]
 
 ```js
-const summarizer = require('summarizer')
+const summarizer = require('url-summarizer')
 
 const url = 'http://nodejs.org/api/documentation.html'
 
