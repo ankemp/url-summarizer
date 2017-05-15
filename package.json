@@ -1,13 +1,8 @@
 {
-    "name": "summarizer",
+    "name": "url-summarizer",
     "version": "4.2.4",
     "description": "Scrapes a remote page and creates a summary with statistics.",
     "main": "index.js",
-    "scripts": {
-        "start": "node index",
-        "test": "eslint .",
-        "example": "node example"
-    },
     "repository": {
         "type": "git",
         "url": "https://github.com/ankemp/summarizer.git"
@@ -15,7 +10,8 @@
     "keywords": [
         "summarize",
         "summarizer",
-        "summary"
+        "summary",
+        "url"
     ],
     "author": "Andrew Kemp <andrew@ankemp.com>",
     "license": "Apache-2.0",
