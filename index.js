@@ -41,4 +41,3 @@ module.exports = (requestOptions, options) => {
         // .catch(err => Reject)
     })
 }
-
