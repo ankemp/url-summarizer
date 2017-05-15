@@ -1,4 +1,4 @@
-# URL Summarizer
+# URL Summarizer [![Build Status](https://travis-ci.org/ankemp/url-summarizer.svg?branch=master)](https://travis-ci.org/ankemp/url-summarizer)
 
 Scrapes a remote page and creates a summary with statistics.
 
