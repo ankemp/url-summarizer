@@ -30,7 +30,9 @@ module.exports = (requestOptions, options) => {
                 if (options && options.includeRaw) {
                     pageContent.raw = body
                 }
-                pageContent.stats = summarize(body)
+                if (!options || (options && options.excludeStats)) {
+                    pageContent.stats = summarize(body)
+                }
                 summarizeArticle(pageContent.title, pageContent.text)
                     .then(summary => {
                         pageContent.summary = summary

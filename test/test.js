@@ -40,3 +40,23 @@ describe('Test Full Summary w/ Raw', function () {
         })
     })
 })
+
+describe('Test Full Summary w/o Stats', function () {
+    let summary;
+    before(function () {
+        summary = summarizer(url, { excludeStats: true })
+    })
+    it('Summarize resolved without error', function () {
+        return summary
+    })
+    it('Returned data is an object', function () {
+        summary.then(results => {
+            assert.isObject(results, 'Results of summary is object')
+        })
+    })
+    it('Returned data has no stats property', function () {
+        summary.then(results => {
+            assert.notProperty(results, 'raw')
+        })
+    })
+})
