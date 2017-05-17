@@ -22,10 +22,10 @@ $ yarn add url-summarizer
 
 **url** | **requestParameters** &mdash; URL string or request parameters from the [request](https://www.npmjs.com/package/request) package.
 
-**options** &mdash; Options object currently only includes ability to include original raw output from the scrape.
+**options** &mdash; Options object has the ability to include raw HTML from request, and to exclude running running summarize() module which gets the stats object.
 
 ```json
-{ includeRaw: true }
+{ includeRaw: true, excludeStats: true }
 ```
 
 ### Example usage
