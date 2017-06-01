@@ -7,7 +7,7 @@ const summarizeArticle = (title, story) => {
     return new Promise((Resolve, Reject) => {
         summary.summarize(title, story, (err, summary) => {
             if (err) return Reject(err)
-            summary = summary.split('/n').pop().replace('/n', '') // remove title from summary
+            summary = summary.replace(title, '') // remove title from summary
             return Resolve(summary)
         })
     })
