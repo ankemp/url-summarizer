@@ -1,6 +1,6 @@
 {
   "name": "url-summarizer",
-  "version": "4.6.1",
+  "version": "4.7.0",
   "description": "Scrapes a remote page and creates a summary with statistics.",
   "main": "index.js",
   "scripts": {
